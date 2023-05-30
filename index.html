@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title>Projeto 3D</title>
+      <!-- Bootstrap 4.0 -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+      <!-- Folha de estilo do mapa leaflet --> 
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+      <!-- CDN de icones font-awesome --> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- *************** --> 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+<main>
+<div class="render3d">
+<div class="container">
+<div class="text-center">
+<model-viewer style="width: 100%; height: 85vh;" id="model-viewer" src="scene.gltf" ar ar-modes="scene-viewer webxr" camera-controls touch-action="pan-x" alt="Silo">
+</model-viewer>
+<div class="arr3d">
+<i class="fas fa-chevron-left"></i><span style="margin: 0 10px">Arraste para girar</span><i class="fas fa-chevron-right"></i>
+</div>
+</div>
+</div>
+
+</div>
+</main>
+      <!-- Rodapé modelo Bootstrap--> 
+      <footer class="bg-dark text-center text-white">
+         <!-- Grid container -->
+         <div class="container p-1 pb-0">
+            <!-- Section: Social media -->
+            <section>
+               <!-- Facebook -->
+               <a target="_blank" class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/jeferson.marcos.5477" role="button"
+                  ><i class="fab fa-facebook-f"></i
+                  ></a>
+               <!-- Instagram -->
+               <a target="_blank" class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/jefersonmarcosnunes/" role="button"
+                  ><i class="fab fa-instagram"></i
+                  ></a>
+               <!-- GitHub -->
+               <a target="_blank" class="btn btn-outline-light btn-floating m-1" href="https://github.com/jmarcosmg" role="button"
+                  ><i class="fab fa-github"></i
+                  ></a> 
+            </section>
+            <!-- Section: Social media -->
+         </div>
+         <!-- Grid container -->
+         <!-- Copyright -->
+         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023
+         </div>
+         <!-- Copyright -->
+      </footer>
+<!-- https://modelviewer.dev/ -->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/focus-visible@5.2.0/dist/focus-visible.min.js"></script>
+
+      <script type="text/javascript">
+           document.querySelector("#model-viewer").addEventListener('ar-status', (event) => {
+    if(event.detail.status === 'failed'){
+      const error = document.querySelector("#error");
+      error.classList.remove('hide');
+      error.addEventListener('transitionend',(event) => {
+        error.classList.add('hide');
+      });
+    }
+  });
+
+      </script>
+
+   </body>
+</html>
