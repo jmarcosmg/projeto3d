@@ -54521,7 +54521,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                      ...cce,
                      children: ot.jsxs("h1", {
                         className: "head-text",
-                        children: [modelo," Vamos lÃ¡"]
+                        children: [modelo," Vamos Lá"]
                      })
                   }), ot.jsxs(pa.div, {
                      ...fce,
